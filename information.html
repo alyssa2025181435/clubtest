@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Club | Plan Information</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body { background-color: #f8f9fa; font-family: 'Inter', sans-serif; }
+    .plan-card { border-radius: 12px; }
+    .badge-plan { font-size: 0.8rem; }
+    .feature-icon { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background:#eef2ff; color:#6366f1; margin-right:10px; }
+    .section-title { font-weight: 700; }
+    .list-tight li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #673147;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="dashboard.html">Curriculum Club</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="plans.html">Plans</a></li>
+          <li class="nav-item"><a class="nav-link active" href="information.html">Information</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="container my-5">
+    <h2 class="mb-3 fw-bold text-center">Membership Plan Information</h2>
+    <p class="text-muted text-center mb-4">Understand exactly what you get in each plan: the types of events, what the newsletter includes, how project submissions work, voting, workshops, and support.</p>
+
+    <div class="row g-4">
+      <!-- Basic -->
+      <div class="col-md-4">
+        <div class="card plan-card shadow h-100">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <span class="feature-icon"><i class="fas fa-seedling"></i></span>
+              <h4 class="mb-0">Basic</h4>
+              <span class="badge bg-secondary ms-2 badge-plan">RM20 / month</span>
+            </div>
+            <p class="text-muted">For members who want to attend events and stay connected without project responsibilities.</p>
+            <ul class="list-tight">
+              <li><strong>Access to events:</strong> Community meetups, open talks, showcase nights, and social gatherings.</li>
+              <li><strong>Club newsletter:</strong> Monthly updates with upcoming events, learning tips, member highlights, and calls to join.</li>
+              <li><strong>Project submissions:</strong> Not included — Basic members attend but don’t submit projects.</li>
+              <li><strong>Voting rights:</strong> Not included.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard -->
+      <div class="col-md-4">
+        <div class="card plan-card shadow h-100 border-primary">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <span class="feature-icon"><i class="fas fa-layer-group"></i></span>
+              <h4 class="mb-0">Standard</h4>
+              <span class="badge bg-primary ms-2 badge-plan">RM50 / month</span>
+            </div>
+            <p class="text-muted">For active members who want to submit projects, vote on club decisions, and help shape the club.</p>
+            <ul class="list-tight">
+              <li><strong>Access to events:</strong> All Basic events plus hands-on workshops, peer review sessions, and contributor meetings.</li>
+              <li><strong>Club newsletter:</strong> Includes early access to workshops, contributor columns, and resource packs.</li>
+              <li><strong>Project submissions:</strong> Members can submit websites, designs, research, or event proposals. Reviewed by committee and showcased if approved.</li>
+              <li><strong>Voting rights:</strong> Vote on event priorities, budget allocations, and club policies.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="col-md-4">
+        <div class="card plan-card shadow h-100 border-warning">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <span class="feature-icon"><i class="fas fa-crown"></i></span>
+              <h4 class="mb-0">Premium</h4>
+              <span class="badge bg-warning text-dark ms-2 badge-plan">RM100 / month</span>
+            </div>
+            <p class="text-muted">For dedicated members who want exclusive workshops, priority support, and full participation privileges.</p>
+            <ul class="list-tight">
+              <li><strong>Access to events:</strong> All Standard events plus masterclasses, mentor sessions, and priority seating.</li>
+              <li><strong>Club newsletter:</strong> Premium column with advanced guides, early announcements, and spotlight coverage.</li>
+              <li><strong>Project submissions:</strong> Priority review, advanced submissions, and optional mentor pairing for complex projects.</li>
+              <li><strong>Voting rights:</strong> Extended influence on strategic themes, flagship projects, and sponsorships.</li>
+              <li><strong>Exclusive workshops:</strong> Advanced topics, limited group sizes, and project clinics.</li>
+              <li><strong>Priority support:</strong> Faster responses, office hours with mentors, and resource assistance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer note -->
+    <div class="alert alert-info mt-4">
+      <strong>Tip:</strong> You can upgrade or downgrade between plans monthly. For plan changes, contact the committee via the Members page.
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Curriculum Club | Knowledge is Power</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Hub | Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #673147;
+      --accent-color: #F3CFC6;
+      --bg-color: #f1f5f9;
+      --white: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #673147;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { display: flex; min-height: 100vh; background-color: var(--bg-color); }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      position: fixed;
+      height: 100%;
+    }
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .nav-link {
+      color: #F3CFC6;
+      text-decoration: none;
+      padding: 0.8rem 1rem;
+      margin: 0.2rem 0;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+    }
+    .nav-link i { margin-right: 12px; width: 20px; text-align: center; }
+    .nav-link:hover, .nav-link.active { background: #1e293b; color: var(--white); }
+    .sidebar .bottom-link { margin-top: auto; color: #F3CFC6; }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 260px;
+      flex: 1;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .welcome-section { margin-bottom: 2.5rem; }
+    .welcome-section h1 {font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .welcome-section p { color: var(--text-muted); }
+
+    /* Slideshow */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    .mySlides { display: none; }
+    .mySlides img { width: 100%; border-radius: 8px; }
+    .text {
+      color: #fff;
+      font-size: 1rem;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+    .numbertext {
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    .dot {
+      height: 15px; width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .active { background-color: #717171; }
+    .fade { animation-name: fade; animation-duration: 1.5s; }
+    @keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+    /* Dashboard Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      flex: 1;
+    }
+    .menu-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      border: 1px solid #6082B6;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .menu-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      background: #eef2ff;
+      color: var(--accent-color);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .menu-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .menu-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { width: 70px; }
+      .sidebar h2, .nav-link span { display: none; }
+      .main-content { margin-left: 70px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <h2>Curriculum Club</h2>
+    <a href="dashboard.html" class="nav-link active"><i class="fas fa-columns"></i> <span>Home</span></a>
+    <a href="profile.html" class="nav-link"><i class="fas fa-users"></i> <span>Your Profile</span></a>
+    <a href="plans.html" class="nav-link"><i class="fas fa-layer-group"></i> <span>Membership Plans</span></a>
+    <a href="perks.html" class="nav-link"><i class="fas fa-gift"></i> <span>Club Perks</span></a>
+    <a href="login.html" class="nav-link bottom-link"><i class="fas fa-power-off"></i> <span>Sign Out</span></a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Welcome -->
+    <section class="welcome-section">
+      <h1 id="welcomeMessage">Hello, Member!</h1>
+      <p>Your membership status: <span class="badge bg-success">Active</span></p>
+    </section>
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="pictures/ban1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="pictures/ban2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="pictures/ban3.jpg" style="width:100%">
+  </div>
+
+</div>
+
+<!-- Dots -->
+<div style="text-align:center; margin-top:10px;">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+     <h4 class="fw-bold">About Curriculum Club</h4>
+        <p class="text-muted">
+          The Curriculum Club is a student-driven learning hub that teaches practical skills, academic support, and personal growth. 
+          Members participate in workshops on web design, coding, and creative projects, while also developing leadership, teamwork, 
+          and communication skills through committee roles and events. Our mission is to empower learners with knowledge, creativity, 
+          and collaboration.
+        </p>
+
+
+    <!-- Upcoming Events -->
+    <section class="mb-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h4 class="fw-bold">Upcoming Events</h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">🎉 New Year Gathering - Jan 5</li>
+            <li class="list-group-item">🏆 Club Awards Night - Feb 10</li>
+            <li class="list-group-item">📚 Workshop: Web Design - Mar 15</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Cards -->
+<section class="container my-4">
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col-md-4 mb-4">
+      <a href="members.html" class="menu-card d-block h-100">
+        <div class="icon-box"><i class="fas fa-users"></i></div>
+        <h3>Member Directory</h3>
+        <p>Browse the list of active members and connect with your peers.</p>
+      </a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4 mb-4">
+      <a href="events.html" class="menu-card d-block h-100">
+        <div class="icon-box"><i class="fas fa-calendar-alt"></i></div>
+        <h3>Events Calendar</h3>
+        <p>Stay updated with upcoming events and activities.</p>
+      </a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4 mb-4">
+      <a href="resources.html" class="menu-card d-block h-100">
+        <div class="icon-box"><i class="fas fa-book"></i></div>
+        <h3>Club Resources</h3>
+        <p>Access guides, documents, and exclusive club materials.</p>
+      </a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-4 mb-4">
+      <a href="chat.html" class="menu-card d-block h-100">
+        <div class="icon-box"><i class="fas fa-comments"></i></div>
+        <h3>Community Chat</h3>
+        <p>Engage in conversations and share ideas with fellow members.</p>
+      </a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-md-4 mb-4">
+      <a href="submission.html" class="menu-card d-block h-100">
+        <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+        <h3>Member Projects</h3>
+        <p>Submit your contributions and collaborate on club initiatives.</p>
+      </a>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-md-4 mb-4">
+      <a href="schedule.html" class="menu-card d-block h-100">
+        <div class="icon-box"><i class="fas fa-calendar-check"></i></div>
+        <h3>Activity Schedule</h3>
+        <p>View upcoming meetings, workshops, and social gatherings.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+ <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Curriculum Management System | Knowledge is Power</p>
+    </footer>
+  </main>
+
+<!-- Slideshow CSS -->
+<style>
+.mySlides {display: none;}
+img {vertical-align: middle;}
+.slideshow-container {max-width: 1000px; position: relative; margin: auto;}
+.dot {
+  height: 15px; width: 15px; margin: 0 2px;
+  background-color: #bbb; border-radius: 50%; display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {background-color: #717171;}
+.fade {animation-name: fade; animation-duration: 3s;}
+@keyframes fade {from {opacity: .4} to {opacity: 1}}
+</style>
+
+<!-- Slideshow -->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // time
+}
+</script>
+</body>
+</html>

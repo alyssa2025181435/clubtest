@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Club | Resources</title>
+  <!-- Club font -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa; /* light gray background */
+      color: #212529;            /* dark text */
+      font-family: 'Inter', sans-serif;
+    }
+
+    main {
+      padding: 60px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .resources-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .resource-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding-bottom: 15px;
+    }
+
+    .resource-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid #dee2e6;
+    }
+
+    .resource-card h2 {
+      padding: 15px 15px 5px 15px;
+      font-size: 18px;
+      color: #212529;
+    }
+
+    .resource-card p {
+      font-size: 14px;
+      color: #6c757d;
+      margin: 0 15px;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+<!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #673147;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="dashboard.html">C-Club</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="schedule.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="submission.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="resources.html">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="chat.html">Chats</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+    <h1 style="color:#673147">Curriculum Club Resources</h1>
+    <p>Click on a card to explore resources</p>
+
+    <section class="resources-gallery">
+      <div class="resource-card">
+        <a href="https://studeli.com/">
+          <img src="pictures/study.png" alt="Study Guides">
+          <h2>&#128218; Study Guides & Materials</h2>
+          <p>Find guides, documents, and helpful links to make the most of your membership.</p>
+        </a>
+      </div>
+
+      <div class="resource-card">
+        <a href="https://www.dexform.com/download/sample-club-constitution-and-by-laws#google_vignette">
+          <img src="pictures/doc.avif" alt="Club Documents">
+          <h2>&#128196; Club Documents & Rules</h2>
+          <p>Access official club rules, meeting minutes, and membership forms.</p>
+        </a>
+      </div>
+
+      <div class="resource-card">
+        <a href="https://inkbotdesign.com/tools-for-design-students/">
+          <img src="C:\Users\Alyssa Nor Azhar\Desktop\Club Membership System\pictures\link.jpg" alt="Useful Links">
+          <h2>&#128279; Useful Links & Tools</h2>
+          <p>Quick access to external resources, partner sites, and recommended tools.</p>
+        </a>
+      </div>
+
+      <div class="resource-card">
+        <a href="https://www.w3schools.com/">
+          <img src="pictures/tech.jpg" alt="Tech Tutorials">
+          <h2>&#128187; Tech Tutorials</h2>
+          <p>Step-by-step tutorials on coding, design, and dashboard customization.</p>
+        </a>
+      </div>
+
+      <div class="resource-card">
+        <a href="members.html">
+          <img src="pictures/member.png" alt="Member Directory">
+          <h2>&#128101; Member Directory</h2>
+          <p>See all members, committees, and connect with fellow club participants.</p>
+        </a>
+      </div>
+
+      <div class="resource-card">
+        <a href="https://venngage.com/templates/proposals">
+          <img src="pictures/template.webp" alt="Templates">
+          <h2>&#128221; Templates</h2>
+          <p>Submit your projects, proposals, or feedback directly to the committee.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+<footer class="text-center py-3 mt-auto" style="background-color: #673147; color: pink;">
+  <p class="mb-0">© 2025 Curriculum Club | Knowledge is Power</p>
+</footer>
+
+</body>
+</html>
